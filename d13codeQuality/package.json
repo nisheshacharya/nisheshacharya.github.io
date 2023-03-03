@@ -1,0 +1,16 @@
+{
+  "name": "d13codequality",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "type": "module",
+  "module": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.2.0"
+  }
+}
