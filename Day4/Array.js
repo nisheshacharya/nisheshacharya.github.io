@@ -1,4 +1,6 @@
-// Finding maximum of three numbers.
+/* 1. Define a function maxOfThree() that takes three numbers as arguments and returns the 
+largest of them. 
+*/ 
 /**
  * 
  * @param {Number}  firstNum is first number,  
@@ -19,6 +21,10 @@ export function maxOfThree(firstNum, secondNum, thirdNum) {
     return largestNum;
 }
 
+/*2. Define a function sum() and a function multiply() that sums and multiplies (respectively) 
+all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, 
+and multiply([1,2,3,4]) should return 24.
+*/
 //
 /**
  * 
@@ -46,8 +52,8 @@ export function multiply(arr) {
 }
 
 
-//Write a function findLongestWord() that takes 
-//an array of words and returns the length of the longest one.  
+/*3. Write a function findLongestWord() that takes 
+an array of words and returns the length of the longest one.  */
 
 
 /**
@@ -64,6 +70,14 @@ export function findLongestWord(arr) {
     }
     return longestWord;
 }
+/* 4. Reverse an Array  Arrays have a reverse method that changes the array by 
+inverting the order in which its elements appear. For this exercise, write two
+ functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes
+  an array as argument and produces a new array that has the same elements in the inverse 
+  order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the 
+  array given as argument by reversing its elements.
+ Neither may use the standard reverse method. 
+*/
 /**
  * 
  * @param {Array} arr any array.
