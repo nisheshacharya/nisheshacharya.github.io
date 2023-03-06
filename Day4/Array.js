@@ -113,6 +113,9 @@ export function reverseArrayInPlace(arr) {
  */
 export function scoreExams(arrayStuAnswers, arrayCorrectAnswers) {
     let scores = [];
+
+    //create an array for scores
+    
     for (let x = 0; x < arrayStuAnswers.length; x++) {
         scores[x] = 0;
     }
