@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Book List</title>
+
+</head>
+
+<body>
+    <p>
+        Book Title
+        <br />
+        <input type="text" id="title" size="80" />
+    </p>
+    <p>
+        Author
+        <br />
+        <input type="text" id="author" size="80" />
+    </p>
+
+    <button type="button"  id="addBtn">Add book to library</button>
+    <button type="button"  id="titlesBtn">Show titles</button>
+    <button type="button"  id="scrambleBtn" >Scramble</button>
+    <button type="button"  id ="findAuthor" >Find Author</button>
+
+    <script type="module">
+      import {addBook, showTitles, scramble, showAuthors} from "./app.js"    
+      import {test} from "./student.js"  
+      document.querySelector('#addBtn').addEventListener('click', addBook)
+      document.querySelector('#titlesBtn').addEventListener('click', showTitles)
+      document.querySelector('#scrambleBtn').addEventListener('click', scramble)
+      document.querySelector('#findAuthor').addEventListener('click', test)
+    </script>
+
+    <p>
+        <textarea id="displayArea" rows="10" cols="80"></textarea>
+    </p>
+
+</body>
+
+
+</html>
