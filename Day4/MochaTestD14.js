@@ -1,14 +1,8 @@
 /* comment out the import assert line when running in the browser */
-//import assert from "node:assert/strict"; 
+import assert from "node:assert/strict"; 
 //THIS IS NEW 3/1/2023
-import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-//import {maxOfThree, sum, findLongestWord, multiply} from "./array.js"
-//import findLongestWord
-// import { findLongestWord } from "./array.js";
-// import { reverseArray } from "./array.js";
-// import { reverseArrayInPlace } from "./array.js";
-// import { scoreExams } from "./array.js";
-// import { generateArray } from "./array.js";
+import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./array.js";
+
      
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
