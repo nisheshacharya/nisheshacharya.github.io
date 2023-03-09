@@ -1,25 +1,21 @@
-function addMat(arr, arry){
-    let res = []; 
-    for (let i = 0; i<arr.length; i++){
-        let insideAr = [];
-        for (let j = 0; j<arr.length; j++){
-            insideAr.push((arr[i][j])+arry[i][j]);
-        }
+const prompt = require("prompt-sync")();
+//console.log(6.555.toFixed(2));         // 6.55
+//console.log(6.355.toFixed(2));         // 6.36
 
-        res.push(insideAr);
+function takeInput(num){
+    let n=0;
+    do{
+    let n = prompt("Enter a number");
     }
-    return res;
+    while(!isFinite){
+        if(n===null || n===""){
+            return null;
+        }
+    }
+    return n;
 }
+takeInput();
 
-const fname = function() {return "something";}
-
-function lname() {
-    return "Acharya";
-}
-
-const fname2 = lname;
-
-console.log(lname());
-console.log(fname2());
-
+let myInt = 555;
+myInt = false;
 

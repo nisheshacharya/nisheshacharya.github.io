@@ -1,5 +1,5 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "g": "^2.0.1",
     "mocha": "^10.2.0",

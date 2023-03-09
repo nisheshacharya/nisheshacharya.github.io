@@ -3,6 +3,7 @@
 
 import {double, times100, myMap} from "./W1D5.js";
 
+
 /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
 describe("double", function () {
     it("tests double 10", function () {
