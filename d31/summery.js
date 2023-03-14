@@ -77,6 +77,14 @@ console.log(barsha);
 
 let talab, barsha;
 ({talab , barsha}={talab: 100000, barsha: 32}); //wrap with (). too easy!
-console.log(barsha);
+console.log(barsha);    //32
 
+/*
+2. destructurethe team onto variables: one (point guard), 
+two (shooting guard), three (small forward), four (power forward) and five (center)
+*/
 
+//const teamB = {one:"point guard", two: "shooring guard", three: "small forward", four: "power forward", five: "cneter" };
+let BobB, rob, Jiim, Jack,Smith;
+({BobB, rob, Jiim, Jack,Smith}= {BobB:"one",rob:"two", Jiim: "three", Jack: "four",  Smith:"five"});
+console.log(Jiim);  
