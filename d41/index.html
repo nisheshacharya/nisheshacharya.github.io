@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+    <!-- All of these tests run and show nicely in the browser when the module exports are commented out in the js files. 8/27/2021kl-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <title>Advanced Function Excercises Lab</title>
+    <title>Bank Accounts</title>
+    <meta charset="utf-8">
 
-    <!-- add mocha css, to show results -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    <!-- add mocha framework code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-    <script>
-        mocha.setup('bdd'); // minimal setup
-    </script>
-    <!-- add chai -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
     <script>
+        // initialize mocha
+        mocha.setup('bdd');
         // chai has a lot of stuff, let's make assert global
         let assert = chai.assert;
     </script>
-</head>
 
-
-<body>
+    <script src="account.js" type="module" ></script>
+    <script src="savingsaccount.js" type="module" ></script>
+    <script src="checkingaccount.js" type="module" ></script>
     <script src="bank.js" type="module" ></script>
     <script src="bankTests.js" type="module" ></script>
-    <script src="funTests.js"> type="module" </script>
-    <script src="funPracticeTests.js" type="module" ></script>
-    <script src="grades.js"> type="module" </script>
-    <script src="gradeTests.js" type="module" ></script>
+</head>
 
-
-    <h2>Advanced Functions Practice Lab</h2>
-    <!-- the element with id="mocha" will contain test results -->
+<body>
     <div id="mocha"></div>
-
-    <!-- run tests! -->
     <script type="module" >
         mocha.run();
     </script>
-
 </body>
-
 
 </html>

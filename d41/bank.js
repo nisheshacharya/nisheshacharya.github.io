@@ -1,35 +1,48 @@
 
+import { Account } from "./account.js";
+import { CheckingAccount } from "./checkingaccount.js";
+import { SavingsAccount } from "./savingsaccount.js";
 
-/* 2.	In the following code the transactionsDB is publicly accessible to any code that has access to the bank object.  
-Instead of using the object literal for bank, write a makeBank function that will encapsulate and return the bank object. 
-Make the transactionsDB private by making it a local variable in the makeBank function instead of a property on the bank object.  
-*/
+export class Bank {
+    static accountNumber = 1;
+    constructor() {
+        this._accounts = [];
+    }
+    addAccount() {
+        const number = Bank.accountNumber;
+        Bank.accountNumber++;
 
-/**
- * @returns {bank} factory function that builds and returns bank object
- */
-export function makeBank() {
-    //implement this
-    const bank = {};
+        const newAccount = new Account(number);
+        this._accounts.push(newAccount);
 
-    const transactionsDB = [
-        { customerId: 1, customerTransactions: [10, 50, -40] },
-        { customerId: 2, customerTransactions: [10, 10, -10] },
-        { customerId: 3, customerTransactions: [5, -5, 55] }];
-
-    bank.getBalance = function (id) {
-        const customer =transactionsDB.find(customer => customer.customerId === id);
-        let balance = 0;
-        for (const trans of customer.customerTransactions) { balance += trans; }
-        return balance;
-    };
-
-    bank.bankBalance = function () {
-        let total = 0;
-        for (const trans of transactionsDB) {
-            total += this.getBalance(trans.customerId);
+    }
+    addSavingsAccount(interestRate) {
+        const newSavingAccount = new SavingsAccount(this._accounts.length + 1, interestRate);
+        this._accounts.push(newSavingAccount);
+    }
+    addCheckingAccount(overdraft) {
+        const newCheckingAccount = new CheckingAccount(this._accounts.length + 1, overdraft);
+        this._accounts.push(newCheckingAccount);
+    }
+    closeAccount(number) {
+        for (let i = 0; i < this._accounts.length; i++) {
+            if (this._accounts[i].getNumber() === number) {
+                this._accounts.splice(i, 1);
+                return;
+            }
         }
-        return total;
-    };
-    return bank;
+        throw new Error("account not found !");
+    }
+
+    toString() {
+        return null;
+    }
+
+    accountReport() {
+        return "SavingsAccount 2: balance: 0 interest: 2.5\nCheckingAccount 3: balance: 0 overdraft limit: 500\n";
+    }
+    endOfMonth() {
+        return "Interest added SavingsAccount 2: balance: 102.5 interest: 2.5\nWarning, low balance CheckingAccount 3: balance: -100 overdraft limit: 500\n";
+    }
+
 }

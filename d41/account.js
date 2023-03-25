@@ -1,9 +1,13 @@
+
+
 /**
  * A Bank Account class
  * 
  * Provides the basic functionality that every account should have
  */
 export class Account {
+    #balance;
+    #number;
 
     /**
      * Constructor for creating a new Account object
@@ -11,17 +15,19 @@ export class Account {
      * @param {number} number the number for this account
      */
     constructor(number) {
-        this._number = number; // the account number
-        this._balance = 0.0;
+        this.#number = number; // the account number
+        this.#balance = 0.0;
     }
-
     /**
      * Getter for the 'private' number field
      * 
      * @returns {number} the account number
      */
     getNumber() {
-        return this._number;
+        return this.#number;
+    }
+    setNumber(accNum){
+        this.#number=accNum;
     }
 
     /**
@@ -30,9 +36,12 @@ export class Account {
      * @returns {number} balance for this account
      */
     getBalance() {
-        return this._balance;
+        return this.#balance;
     }
 
+    setBalance(amount){
+        return this.#balance+=amount;
+    }
     /**
      * Method to add money into the account
      * 
@@ -44,9 +53,11 @@ export class Account {
         if (amount <= 0) {
             throw new RangeError("Deposit amount has to be greater than zero");
         }
-        this._balance += amount;
+        this.#balance += amount;
     }
-
+    getDeposit(){
+        return this.deposit;
+    }
     /**
      * Method to take money out of the account
      * 
@@ -59,17 +70,20 @@ export class Account {
         if (amount <= 0) {
             throw new RangeError("Withdraw amount has to be greater than zero");
         }
-        if (amount > this._balance) {
+        if (amount > this.#balance) {
             throw Error("Insufficient funds");
         }
-        this._balance -= amount;
+        this.#balance -= amount;
+    }
+    setBalance(amount) {
+        this.#balance = amount;
     }
 
     /**
      * @returns {string} representation of this account
      */
     toString() {
-        return "Account " + this._number + ": balance " + this._balance;
+        return "Account " + this.#number + ": balance " + this.#balance;
     }
 
     /**
@@ -80,4 +94,5 @@ export class Account {
     endOfMonth() {
         return ""; // does nothing
     }
+
 }
